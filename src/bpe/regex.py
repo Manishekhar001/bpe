@@ -45,7 +45,7 @@ class RegexTokenizer(Tokenizer):
             for chunk_ids in ids:
                 get_stats(chunk_ids, stats)
 
-            pair = min(stats, key=stats.get)
+            pair = max(stats, key=stats.get)   # FIX: max, not min — training merges the MOST frequent pair
 
             idx = 256 + i
 

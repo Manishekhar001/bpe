@@ -51,7 +51,7 @@ class BasicTokenizer(Tokenizer):
         text_bytes = text.encode('utf-8')
         ids = list(text_bytes)
 
-        while(len(ids) > 2):
+        while(len(ids) >= 2):
             stats = get_stats(ids)
 
             pair = min(stats, key = lambda p : self.merges.get(p, float('inf')))
@@ -59,7 +59,7 @@ class BasicTokenizer(Tokenizer):
             if pair not in self.merges:
                 break # Nothing else if there to merge
 
-            idx = self.merge[pair]
+            idx = self.merges[pair]
             ids = merge(ids, pair, idx)
 
         return ids
