@@ -1,0 +1,512 @@
+[\u0000] 0
+[\u0001] 1
+[\u0002] 2
+[\u0003] 3
+[\u0004] 4
+[\u0005] 5
+[\u0006] 6
+[\u0007] 7
+[\u0008] 8
+[\u0009] 9
+[\u000a] 10
+[\u000b] 11
+[\u000c] 12
+[\u000d] 13
+[\u000e] 14
+[\u000f] 15
+[\u0010] 16
+[\u0011] 17
+[\u0012] 18
+[\u0013] 19
+[\u0014] 20
+[\u0015] 21
+[\u0016] 22
+[\u0017] 23
+[\u0018] 24
+[\u0019] 25
+[\u001a] 26
+[\u001b] 27
+[\u001c] 28
+[\u001d] 29
+[\u001e] 30
+[\u001f] 31
+[ ] 32
+[!] 33
+["] 34
+[#] 35
+[$] 36
+[%] 37
+[&] 38
+['] 39
+[(] 40
+[)] 41
+[*] 42
+[+] 43
+[,] 44
+[-] 45
+[.] 46
+[/] 47
+[0] 48
+[1] 49
+[2] 50
+[3] 51
+[4] 52
+[5] 53
+[6] 54
+[7] 55
+[8] 56
+[9] 57
+[:] 58
+[;] 59
+[<] 60
+[=] 61
+[>] 62
+[?] 63
+[@] 64
+[A] 65
+[B] 66
+[C] 67
+[D] 68
+[E] 69
+[F] 70
+[G] 71
+[H] 72
+[I] 73
+[J] 74
+[K] 75
+[L] 76
+[M] 77
+[N] 78
+[O] 79
+[P] 80
+[Q] 81
+[R] 82
+[S] 83
+[T] 84
+[U] 85
+[V] 86
+[W] 87
+[X] 88
+[Y] 89
+[Z] 90
+[[] 91
+[\] 92
+[]] 93
+[^] 94
+[_] 95
+[`] 96
+[a] 97
+[b] 98
+[c] 99
+[d] 100
+[e] 101
+[f] 102
+[g] 103
+[h] 104
+[i] 105
+[j] 106
+[k] 107
+[l] 108
+[m] 109
+[n] 110
+[o] 111
+[p] 112
+[q] 113
+[r] 114
+[s] 115
+[t] 116
+[u] 117
+[v] 118
+[w] 119
+[x] 120
+[y] 121
+[z] 122
+[{] 123
+[|] 124
+[}] 125
+[~] 126
+[\u007f] 127
+[�] 128
+[�] 129
+[�] 130
+[�] 131
+[�] 132
+[�] 133
+[�] 134
+[�] 135
+[�] 136
+[�] 137
+[�] 138
+[�] 139
+[�] 140
+[�] 141
+[�] 142
+[�] 143
+[�] 144
+[�] 145
+[�] 146
+[�] 147
+[�] 148
+[�] 149
+[�] 150
+[�] 151
+[�] 152
+[�] 153
+[�] 154
+[�] 155
+[�] 156
+[�] 157
+[�] 158
+[�] 159
+[�] 160
+[�] 161
+[�] 162
+[�] 163
+[�] 164
+[�] 165
+[�] 166
+[�] 167
+[�] 168
+[�] 169
+[�] 170
+[�] 171
+[�] 172
+[�] 173
+[�] 174
+[�] 175
+[�] 176
+[�] 177
+[�] 178
+[�] 179
+[�] 180
+[�] 181
+[�] 182
+[�] 183
+[�] 184
+[�] 185
+[�] 186
+[�] 187
+[�] 188
+[�] 189
+[�] 190
+[�] 191
+[�] 192
+[�] 193
+[�] 194
+[�] 195
+[�] 196
+[�] 197
+[�] 198
+[�] 199
+[�] 200
+[�] 201
+[�] 202
+[�] 203
+[�] 204
+[�] 205
+[�] 206
+[�] 207
+[�] 208
+[�] 209
+[�] 210
+[�] 211
+[�] 212
+[�] 213
+[�] 214
+[�] 215
+[�] 216
+[�] 217
+[�] 218
+[�] 219
+[�] 220
+[�] 221
+[�] 222
+[�] 223
+[�] 224
+[�] 225
+[�] 226
+[�] 227
+[�] 228
+[�] 229
+[�] 230
+[�] 231
+[�] 232
+[�] 233
+[�] 234
+[�] 235
+[�] 236
+[�] 237
+[�] 238
+[�] 239
+[�] 240
+[�] 241
+[�] 242
+[�] 243
+[�] 244
+[�] 245
+[�] 246
+[�] 247
+[�] 248
+[�] 249
+[�] 250
+[�] 251
+[�] 252
+[�] 253
+[�] 254
+[�] 255
+[-][\u000a] -> [-\u000a] 256
+[-][-] -> [--] 257
+[--][-\u000a] -> [---\u000a] 258
+[---\u000a][\u000a] -> [---\u000a\u000a] 259
+[a][T] -> [aT] 260
+[i][aT] -> [iaT] 261
+[d][iaT] -> [diaT] 262
+[e][diaT] -> [ediaT] 263
+[p][ediaT] -> [pediaT] 264
+[i][pediaT] -> [ipediaT] 265
+[k][ipediaT] -> [kipediaT] 266
+[i][kipediaT] -> [ikipediaT] 267
+[W][ikipediaT] -> [WikipediaT] 268
+[WikipediaT][h] -> [WikipediaTh] 269
+[WikipediaTh][e] -> [WikipediaThe] 270
+[(][T] -> [(T] 271
+[(T][o] -> [(To] 272
+[(To][p] -> [(Top] 273
+[\u0009][T] -> [\u0009T] 274
+[\u0009T][a] -> [\u0009Ta] 275
+[\u0009Ta][y] -> [\u0009Tay] 276
+[\u0009Tay][l] -> [\u0009Tayl] 277
+[\u0009Tayl][o] -> [\u0009Taylo] 278
+[\u0009Taylo][r] -> [\u0009Taylor] 279
+[s][v] -> [sv] 280
+[g][sv] -> [gsv] 281
+[n][gsv] -> [ngsv] 282
+[o][ngsv] -> [ongsv] 283
+[s][ongsv] -> [songsv] 284
+[s][songsv] -> [ssongsv] 285
+[e][ssongsv] -> [essongsv] 286
+[l][essongsv] -> [lessongsv] 287
+[g][lessongsv] -> [glessongsv] 288
+[n][glessongsv] -> [nglessongsv] 289
+[i][nglessongsv] -> [inglessongsv] 290
+[s][inglessongsv] -> [singlessongsv] 291
+[s][singlessongsv] -> [ssinglessongsv] 292
+[m][ssinglessongsv] -> [mssinglessongsv] 293
+[u][mssinglessongsv] -> [umssinglessongsv] 294
+[b][umssinglessongsv] -> [bumssinglessongsv] 295
+[l][bumssinglessongsv] -> [lbumssinglessongsv] 296
+[A][lbumssinglessongsv] -> [Albumssinglessongsv] 297
+[Albumssinglessongsv][i] -> [Albumssinglessongsvi] 298
+[Albumssinglessongsvi][d] -> [Albumssinglessongsvid] 299
+[Albumssinglessongsvid][e] -> [Albumssinglessongsvide] 300
+[Albumssinglessongsvide][o] -> [Albumssinglessongsvideo] 301
+[Albumssinglessongsvideo][s] -> [Albumssinglessongsvideos] 302
+[Albumssinglessongsvideos][p] -> [Albumssinglessongsvideosp] 303
+[Albumssinglessongsvideosp][e] -> [Albumssinglessongsvideospe] 304
+[Albumssinglessongsvideospe][r] -> [Albumssinglessongsvideosper] 305
+[Albumssinglessongsvideosper][f] -> [Albumssinglessongsvideosperf] 306
+[Albumssinglessongsvideosperf][o] -> [Albumssinglessongsvideosperfo] 307
+[Albumssinglessongsvideosperfo][r] -> [Albumssinglessongsvideosperfor] 308
+[Albumssinglessongsvideosperfor][m] -> [Albumssinglessongsvideosperform] 309
+[Albumssinglessongsvideosperform][a] -> [Albumssinglessongsvideosperforma] 310
+[Albumssinglessongsvideosperforma][n] -> [Albumssinglessongsvideosperforman] 311
+[Albumssinglessongsvideosperforman][c] -> [Albumssinglessongsvideosperformanc] 312
+[Albumssinglessongsvideosperformanc][e] -> [Albumssinglessongsvideosperformance] 313
+[Albumssinglessongsvideosperformance][s] -> [Albumssinglessongsvideosperformances] 314
+[\u0009][F] -> [\u0009F] 315
+[\u0009F][u] -> [\u0009Fu] 316
+[\u0009Fu][l] -> [\u0009Ful] 317
+[\u0009Ful][l] -> [\u0009Full] 318
+[\u0009][N] -> [\u0009N] 319
+[\u0009N][a] -> [\u0009Na] 320
+[\u0009Na][s] -> [\u0009Nas] 321
+[\u0009Nas][h] -> [\u0009Nash] 322
+[\u0009Nash][v] -> [\u0009Nashv] 323
+[\u0009Nashv][i] -> [\u0009Nashvi] 324
+[\u0009Nashvi][l] -> [\u0009Nashvil] 325
+[\u0009Nashvil][l] -> [\u0009Nashvill] 326
+[\u0009Nashvill][e] -> [\u0009Nashville] 327
+[\u0009][w] -> [\u0009w] 328
+[\u0009w][w] -> [\u0009ww] 329
+[\u0009ww][w] -> [\u0009www] 330
+[.][t] -> [.t] 331
+[.t][a] -> [.ta] 332
+[.ta][y] -> [.tay] 333
+[.tay][l] -> [.tayl] 334
+[.tayl][o] -> [.taylo] 335
+[.taylo][r] -> [.taylor] 336
+[.taylor][s] -> [.taylors] 337
+[.taylors][w] -> [.taylorsw] 338
+[.taylorsw][i] -> [.taylorswi] 339
+[.taylorswi][f] -> [.taylorswif] 340
+[.taylorswif][t] -> [.taylorswift] 341
+[b][t] -> [bt] 342
+[u][bt] -> [ubt] 343
+[s][ubt] -> [subt] 344
+[ ][subt] -> [ subt] 345
+[ subt][i] -> [ subti] 346
+[ subti][t] -> [ subtit] 347
+[ subtit][l] -> [ subtitl] 348
+[ subtitl][e] -> [ subtitle] 349
+[ subtitle][d] -> [ subtitled] 350
+[b][m] -> [bm] 351
+[u][bm] -> [ubm] 352
+[s][ubm] -> [subm] 353
+[ ][subm] -> [ subm] 354
+[ subm][i] -> [ submi] 355
+[ submi][t] -> [ submit] 356
+[ submit][t] -> [ submitt] 357
+[ submitt][e] -> [ submitte] 358
+[ submitte][d] -> [ submitted] 359
+[e][j] -> [ej] 360
+[r][ej] -> [rej] 361
+[ ][rej] -> [ rej] 362
+[ rej][e] -> [ reje] 363
+[ reje][c] -> [ rejec] 364
+[ rejec][t] -> [ reject] 365
+[ reject][e] -> [ rejecte] 366
+[ rejecte][d] -> [ rejected] 367
+[�][b] -> [�b] 368
+[�][�b] -> [��b] 369
+[�][��b] -> [–b] 370
+[–b][a] -> [–ba] 371
+[–ba][s] -> [–bas] 372
+[–bas][e] -> [–base] 373
+[–base][d] -> [–based] 374
+[c][A] -> [cA] 375
+[M][cA] -> [McA] 376
+[ ][McA] -> [ McA] 377
+[ McA][n] -> [ McAn] 378
+[ McAn][a] -> [ McAna] 379
+[ McAna][l] -> [ McAnal] 380
+[ McAnal][l] -> [ McAnall] 381
+[ McAnall][y] -> [ McAnally] 382
+[[][t] -> [[t] 383
+[[t][i] -> [[ti] 384
+[[ti][n] -> [[tin] 385
+[[tin][g] -> [[ting] 386
+[m][W] -> [mW] 387
+[a][mW] -> [amW] 388
+[e][amW] -> [eamW] 389
+[r][eamW] -> [reamW] 390
+[D][reamW] -> [DreamW] 391
+[ ][DreamW] -> [ DreamW] 392
+[ DreamW][o] -> [ DreamWo] 393
+[ DreamWo][r] -> [ DreamWor] 394
+[ DreamWor][k] -> [ DreamWork] 395
+[ DreamWork][s] -> [ DreamWorks] 396
+[P][s] -> [Ps] 397
+[E][Ps] -> [EPs] 398
+[ ][EPs] -> [ EPs] 399
+[-][u] -> [-u] 400
+[-u][p] -> [-up] 401
+[:][[] -> [:[] 402
+[o][z] -> [oz] 403
+[d][oz] -> [doz] 404
+[ ][doz] -> [ doz] 405
+[ doz][e] -> [ doze] 406
+[ doze][n] -> [ dozen] 407
+[)][[] -> [)[] 408
+[h][w] -> [hw] 409
+[g][hw] -> [ghw] 410
+[i][ghw] -> [ighw] 411
+[H][ighw] -> [Highw] 412
+[Highw][a] -> [Highwa] 413
+[Highwa][y] -> [Highway] 414
+[x][h] -> [xh] 415
+[e][xh] -> [exh] 416
+[ ][exh] -> [ exh] 417
+[ exh][i] -> [ exhi] 418
+[ exhi][b] -> [ exhib] 419
+[ exhib][i] -> [ exhibi] 420
+[ exhibi][t] -> [ exhibit] 421
+[D][J] -> [DJ] 422
+[ ][DJ] -> [ DJ] 423
+[S][j] -> [Sj] 424
+[ ][Sj] -> [ Sj] 425
+[ Sj][�] -> [ Sj�] 426
+[ Sj�][�] -> [ Sjö] 427
+[ Sjö][b] -> [ Sjöb] 428
+[ Sjöb][e] -> [ Sjöbe] 429
+[ Sjöbe][r] -> [ Sjöber] 430
+[ Sjöber][g] -> [ Sjöberg] 431
+[K][Y] -> [KY] 432
+[ ][KY] -> [ KY] 433
+[ KY][G] -> [ KYG] 434
+[ KYG][O] -> [ KYGO] 435
+[F][M] -> [FM] 436
+[-][FM] -> [-FM] 437
+[E][f] -> [Ef] 438
+[ ][Ef] -> [ Ef] 439
+[ Ef][f] -> [ Eff] 440
+[ Eff][e] -> [ Effe] 441
+[ Effe][c] -> [ Effec] 442
+[ Effec][t] -> [ Effect] 443
+[ Effect][s] -> [ Effects] 444
+[-][n] -> [-n] 445
+[-n][o] -> [-no] 446
+[-no][m] -> [-nom] 447
+[-nom][i] -> [-nomi] 448
+[-nomi][n] -> [-nomin] 449
+[-nomin][a] -> [-nomina] 450
+[-nomina][t] -> [-nominat] 451
+[-nominat][e] -> [-nominate] 452
+[-nominate][d] -> [-nominated] 453
+[p][c] -> [pc] 454
+[u][pc] -> [upc] 455
+[ ][upc] -> [ upc] 456
+[ upc][o] -> [ upco] 457
+[ upco][m] -> [ upcom] 458
+[ upcom][i] -> [ upcomi] 459
+[ upcomi][n] -> [ upcomin] 460
+[ upcomin][g] -> [ upcoming] 461
+[E][t] -> [Et] 462
+[ ][Et] -> [ Et] 463
+[ Et][h] -> [ Eth] 464
+[ Eth][e] -> [ Ethe] 465
+[ Ethe][r] -> [ Ether] 466
+[ Ether][i] -> [ Etheri] 467
+[ Etheri][d] -> [ Etherid] 468
+[ Etherid][g] -> [ Etheridg] 469
+[ Etheridg][e] -> [ Etheridge] 470
+[c][L] -> [cL] 471
+[M][cL] -> [McL] 472
+[ ][McL] -> [ McL] 473
+[ McL][a] -> [ McLa] 474
+[ McLa][c] -> [ McLac] 475
+[ McLac][h] -> [ McLach] 476
+[ McLach][l] -> [ McLachl] 477
+[ McLachl][a] -> [ McLachla] 478
+[ McLachla][n] -> [ McLachlan] 479
+["][I] -> ["I] 480
+["I][f] -> ["If] 481
+[�][T] -> [�T] 482
+[�][�T] -> [��T] 483
+[�][��T] -> [—T] 484
+[—T][h] -> [—Th] 485
+[—Th][e] -> [—The] 486
+[u][v] -> [uv] 487
+[e][uv] -> [euv] 488
+[n][euv] -> [neuv] 489
+[a][neuv] -> [aneuv] 490
+[m][aneuv] -> [maneuv] 491
+[ ][maneuv] -> [ maneuv] 492
+[ maneuv][e] -> [ maneuve] 493
+[ maneuve][r] -> [ maneuver] 494
+[k][g] -> [kg] 495
+[c][kg] -> [ckg] 496
+[a][ckg] -> [ackg] 497
+[b][ackg] -> [backg] 498
+[ ][backg] -> [ backg] 499
+[ backg][r] -> [ backgr] 500
+[ backgr][o] -> [ backgro] 501
+[ backgro][u] -> [ backgrou] 502
+[ backgrou][n] -> [ backgroun] 503
+[ backgroun][d] -> [ background] 504
+["][C] -> ["C] 505
+["C][a] -> ["Ca] 506
+["Ca][r] -> ["Car] 507
+["Car][d] -> ["Card] 508
+["Card][i] -> ["Cardi] 509
+["Cardi][g] -> ["Cardig] 510
+["Cardig][a] -> ["Cardiga] 511

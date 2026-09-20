@@ -18,24 +18,24 @@ GPT4_SPLIT_PATTERN = r"""'(?i:[sdmt]|ll|ve|re)|[^\r\n\p{L}\p{N}]?+\p{L}+|\p{N}{1
 
 class RegexTokenizer(Tokenizer):
 
-    def __init__(self, pattern = None):
+    def __init__(self, pattern=None):
         super().__init__()
 
-        self.pattern  = GPT4_SPLIT_PATTERN if pattern is None else pattern
+        self.pattern = GPT4_SPLIT_PATTERN if pattern is None else pattern
         self.compiled_pattern = re.compile(self.pattern)
         self.special_tokens = {}
         self.inverse_special_tokens = {}
 
-    def train(self, text, vocab_size, verbose =  False):
+    def train(self, text, vocab_size, verbose=False):
         assert vocab_size >= 256
         num_merges = vocab_size - 256
 
         text_chunks = re.findall(self.compiled_pattern, text)
 
-        ids = [list[ch.encode('utf-8')] for ch in text_chunks]
+        ids = [list(ch.encode('utf-8')) for ch in text_chunks]  # FIX: list(...) not list[...]
 
         merges = {}
-        vocab = {idx : bytes([idx]) for idx in range(256)}
+        vocab = {idx: bytes([idx]) for idx in range(256)}
 
         for i in range(num_merges):
 
@@ -45,29 +45,27 @@ class RegexTokenizer(Tokenizer):
             for chunk_ids in ids:
                 get_stats(chunk_ids, stats)
 
-            pair = min(stats, key = stats.get)
+            pair = min(stats, key=stats.get)
 
             idx = 256 + i
 
             ids = [merge(chunk_ids, pair, idx) for chunk_ids in ids]
 
-            merge[pair] = idx
+            merges[pair] = idx  # FIX: merges, not merge (merge is the imported function)
             vocab[idx] = vocab[pair[0]] + vocab[pair[1]]
 
             if verbose:
                 print(f"merge {i+1}/{num_merges}: {pair} -> {idx} ({vocab[idx]}) had {stats[pair]} occurences.")
 
         # save the class variables
-        self.merge = merges # used in encode()
-        self.vocab = vocab # used in deocde()
-
+        self.merges = merges  # FIX: self.merges, not self.merge
+        self.vocab = vocab    # used in decode()
 
     def register_special_tokens(self, special_tokens):
         # special_tokens is a dictionary of str -> int
         # example: {"<|endoftext|>": 100257}
         self.special_tokens = special_tokens
         self.inverse_special_tokens = {v: k for k, v in special_tokens.items()}
-
 
     def decode(self, ids):
 
@@ -81,7 +79,7 @@ class RegexTokenizer(Tokenizer):
                 raise ValueError(f"invalid token id: {idx}")
 
         text_bytes = b"".join(part_bytes)
-        text = text_bytes.decode("utf-8", errors = 'replace')
+        text = text_bytes.decode("utf-8", errors='replace')
         return text
 
     def _encode_chunk(self, text_bytes):
@@ -92,7 +90,7 @@ class RegexTokenizer(Tokenizer):
         while len(ids) >= 2:
             # find the pair with the lowest merge index
             stats = get_stats(ids)
-            pair = min(stats, key = lambda p : self.merge.get(p, float("inf")))
+            pair = min(stats, key=lambda p: self.merges.get(p, float("inf")))  # FIX: self.merges, not self.merge
             # subtle: if there are no more merges available, the key will
             # result in an inf for every single pair, and the min will be
             # just the first pair in the list, arbitrarily
@@ -115,12 +113,12 @@ class RegexTokenizer(Tokenizer):
 
         ids = []
         for chunk in text_chunks:
-            chunk_bytes = chunk.encode("utf-8") # raw bytes
-            chunks_ids = self._encode_chuunk(chunk_bytes)
-            ids.extend(chunks_ids)
+            chunk_bytes = chunk.encode("utf-8")  # raw bytes
+            chunk_ids = self._encode_chunk(chunk_bytes)  # FIX: _encode_chunk, not _encode_chuunk
+            ids.extend(chunk_ids)
         return ids
 
-    def encode(self, text, allowed_special = "none_raise"):
+    def encode(self, text, allowed_special="none_raise"):
         """
         Unlike encode_ordinary, this function handles special tokens.
         allowed_special: can be "all"|"none"|"none_raise" or a custom set of special tokens
@@ -139,7 +137,7 @@ class RegexTokenizer(Tokenizer):
             special = {}
             assert all(token not in text for token in self.special_tokens)
         elif isinstance(allowed_special, set):
-            special = {k:v for k,v in self.special_tokens.items() if k in allowed_special}
+            special = {k: v for k, v in self.special_tokens.items() if k in allowed_special}
         else:
             raise ValueError(f"allowed_specials = {allowed_special}  not understood.")
 
@@ -150,13 +148,13 @@ class RegexTokenizer(Tokenizer):
         # we handle special tokens by splitting the text
         # based on the occurrence of any exact match with any of the special tokens
         # we can use re.split for this. note that surrounding the pattern with ()
-        # makes it into a capturing group, so the special tokens will be included   
+        # makes it into a capturing group, so the special tokens will be included
 
         special_pattern = '(' + '|'.join(re.escape(k) for k in special) + ')'
         special_chunks = re.split(special_pattern, text)
         # now all the special characters are separated from the rest of the text
         # all chunks of text are encoded separately, then results are joined
-        
+
         ids = []
         for part in special_chunks:
             if part in special:

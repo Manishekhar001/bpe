@@ -16,7 +16,7 @@ def get_stats(ids, counts = None):
     """
 
     counts = {} if counts is None else counts
-    for pair in zip(id,id[1:]):
+    for pair in zip(ids,ids[1:]):
         counts[pair] = counts.get(pair,0) + 1
     return counts
 
